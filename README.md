@@ -4,9 +4,10 @@ Don't forget to bring an extra mouse with you!
 
 Controls:
 
-Left mouse button (of course)
-Space (to start the game)
-Escape (to go back to main menu)
+- Left mouse button (of course)
+- Space (to start the game)
+- Escape (to go back to main menu)
+
 In this game, you are going to catch as many creatures as you can, earn points and relax a little bit.
 
 During this project, I have gained valuable knowledge and experience, which I'm going to mention below:
