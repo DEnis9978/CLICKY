@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bbji7g7nyqig8"]
+
+[ext_resource type="AudioStream" uid="uid://b3y13c7fijx36" path="res://music/bacground_music.ogg" id="1_fm0gd"]
+
+[node name="BgMusic" type="AudioStreamPlayer"]
+stream = ExtResource("1_fm0gd")
+volume_db = -10.0
+autoplay = true

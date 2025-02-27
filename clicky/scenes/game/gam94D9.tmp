@@ -1,0 +1,76 @@
+[gd_scene load_steps=19 format=3 uid="uid://dckrv20mc5rmf"]
+
+[ext_resource type="Script" path="res://scenes/game/game.gd" id="1_iwrmg"]
+[ext_resource type="Texture2D" uid="uid://pwagk7iwtd6j" path="res://background/game_back/Hills Layer 01.png" id="2_ch21a"]
+[ext_resource type="PackedScene" uid="uid://dr1kt0jodv478" path="res://scenes/bat_enemy/bat_enemy.tscn" id="2_dxo57"]
+[ext_resource type="PackedScene" uid="uid://4gclpfvrfs10" path="res://scenes/bee_enemy/bee_enemy.tscn" id="3_73owf"]
+[ext_resource type="Texture2D" uid="uid://chasad3mi8vvh" path="res://background/game_back/Hills Layer 02.png" id="3_w3x6e"]
+[ext_resource type="PackedScene" uid="uid://1dogp0ms74am" path="res://scenes/blue_bird/blue_bird.tscn" id="4_3qnrr"]
+[ext_resource type="Texture2D" uid="uid://cj15nfux2jty5" path="res://background/game_back/Hills Layer 03.png" id="4_te00a"]
+[ext_resource type="Texture2D" uid="uid://do4nk0gda4hpc" path="res://background/game_back/Hills Layer 04.png" id="5_l6lns"]
+[ext_resource type="PackedScene" uid="uid://casnp47tefddr" path="res://scenes/ghost/ghost.tscn" id="5_qfowu"]
+[ext_resource type="PackedScene" uid="uid://b0agbi75wtlnq" path="res://scenes/green_pig/green_pig.tscn" id="6_66uny"]
+[ext_resource type="Texture2D" uid="uid://c5k13ri8ecjbq" path="res://background/game_back/Hills Layer 05.png" id="6_x43ps"]
+[ext_resource type="Texture2D" uid="uid://bytnd5pldspfv" path="res://background/game_back/Hills Layer 06.png" id="7_6ijga"]
+[ext_resource type="PackedScene" uid="uid://bo1p5wfn5yp6w" path="res://scenes/red_mushroom/red_mushroom.tscn" id="7_6im4t"]
+[ext_resource type="PackedScene" uid="uid://kpj12slap0xi" path="res://scenes/radish/radish.tscn" id="8_rcb2f"]
+[ext_resource type="PackedScene" uid="uid://bbqxx8736w7hp" path="res://scenes/slime/slime.tscn" id="9_lwdog"]
+[ext_resource type="PackedScene" uid="uid://c1qfh3dduykiw" path="res://scenes/turtle/turtle.tscn" id="10_gq3i2"]
+[ext_resource type="PackedScene" uid="uid://calc7rmp3i20n" path="res://scenes/hud/hud.tscn" id="17_wjh68"]
+[ext_resource type="PackedScene" uid="uid://ci4i2kq7wxeqn" path="res://scenes/pause_scene/pause_scene.tscn" id="18_82pg1"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_iwrmg")
+bat_scene = ExtResource("2_dxo57")
+bee_scene = ExtResource("3_73owf")
+bird_scene = ExtResource("4_3qnrr")
+ghost_scene = ExtResource("5_qfowu")
+pig_scene = ExtResource("6_66uny")
+mushroom_scene = ExtResource("7_6im4t")
+radish_scene = ExtResource("8_rcb2f")
+slime_scene = ExtResource("9_lwdog")
+turtle_scene = ExtResource("10_gq3i2")
+
+[node name="Background" type="Node2D" parent="."]
+z_index = -4
+
+[node name="Sprite2D" type="Sprite2D" parent="Background"]
+position = Vector2(576, 324)
+scale = Vector2(2.25, 2.53125)
+texture = ExtResource("2_ch21a")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Background"]
+position = Vector2(576, 324)
+scale = Vector2(2.25, 2.53125)
+texture = ExtResource("3_w3x6e")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Background"]
+position = Vector2(576, 324)
+scale = Vector2(2.25, 2.53125)
+texture = ExtResource("4_te00a")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Background"]
+position = Vector2(576, 324)
+scale = Vector2(2.25, 2.53125)
+texture = ExtResource("5_l6lns")
+
+[node name="Sprite2D5" type="Sprite2D" parent="Background"]
+position = Vector2(576, 324)
+scale = Vector2(2.25, 2.53125)
+texture = ExtResource("6_x43ps")
+
+[node name="Sprite2D6" type="Sprite2D" parent="Background"]
+position = Vector2(576, 324)
+scale = Vector2(2.25, 2.53125)
+texture = ExtResource("7_6ijga")
+
+[node name="SpawnTimer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[node name="HUD" parent="." instance=ExtResource("17_wjh68")]
+
+[node name="PauseScene" parent="." instance=ExtResource("18_82pg1")]
+visible = false
+
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]

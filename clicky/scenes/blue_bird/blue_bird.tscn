@@ -1,0 +1,190 @@
+[gd_scene load_steps=18 format=3 uid="uid://1dogp0ms74am"]
+
+[ext_resource type="Script" path="res://scenes/blue_bird/blue_bird.gd" id="1_k3ara"]
+[ext_resource type="Texture2D" uid="uid://d1mrxls6g10jl" path="res://flying_objects/blue_bird_3232.png" id="1_v7r24"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_du8nc"]
+atlas = ExtResource("1_v7r24")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c3f0r"]
+atlas = ExtResource("1_v7r24")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v14nf"]
+atlas = ExtResource("1_v7r24")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_66m1h"]
+atlas = ExtResource("1_v7r24")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8117i"]
+atlas = ExtResource("1_v7r24")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oa6py"]
+atlas = ExtResource("1_v7r24")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h3mah"]
+atlas = ExtResource("1_v7r24")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mjva5"]
+atlas = ExtResource("1_v7r24")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ds4n0"]
+atlas = ExtResource("1_v7r24")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b3txt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_du8nc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c3f0r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v14nf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_66m1h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8117i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oa6py")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h3mah")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mjva5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ds4n0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lacep"]
+radius = 11.0
+height = 22.0
+
+[sub_resource type="Animation" id="Animation_l2hvo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2, 2)]
+}
+
+[sub_resource type="Animation" id="Animation_7cetp"]
+resource_name = "destroy"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.831373), Color(1, 1, 1, 0.666667), Color(1, 1, 1, 0.470588), Color(1, 1, 1, 0.235294), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(2, 2), Vector2(1, 1), Vector2(1e-05, 1e-05)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_54uu7"]
+resource_name = "scale"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1.5, 1.5), Vector2(1, 1), Vector2(1.5, 1.5)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l1bwb"]
+_data = {
+"RESET": SubResource("Animation_l2hvo"),
+"destroy": SubResource("Animation_7cetp"),
+"scale": SubResource("Animation_54uu7")
+}
+
+[node name="BlueBird" type="Area2D"]
+scale = Vector2(2, 2)
+script = ExtResource("1_k3ara")
+speed_y = 50.0
+points_value = 15.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_b3txt")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3, 1)
+shape = SubResource("CapsuleShape2D_lacep")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_l1bwb")
+}
+autoplay = "scale"

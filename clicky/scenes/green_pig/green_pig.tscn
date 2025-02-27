@@ -1,0 +1,189 @@
+[gd_scene load_steps=18 format=3 uid="uid://b0agbi75wtlnq"]
+
+[ext_resource type="Script" path="res://scenes/green_pig/green_pig.gd" id="1_4h5v3"]
+[ext_resource type="Texture2D" uid="uid://cbutxsyrbhshr" path="res://flying_objects/green_pig_3630.png" id="1_w3esr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_310og"]
+atlas = ExtResource("1_w3esr")
+region = Rect2(0, 0, 36, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ef77t"]
+atlas = ExtResource("1_w3esr")
+region = Rect2(36, 0, 36, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xhn6a"]
+atlas = ExtResource("1_w3esr")
+region = Rect2(72, 0, 36, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fv1tq"]
+atlas = ExtResource("1_w3esr")
+region = Rect2(108, 0, 36, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wht2s"]
+atlas = ExtResource("1_w3esr")
+region = Rect2(144, 0, 36, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i701f"]
+atlas = ExtResource("1_w3esr")
+region = Rect2(180, 0, 36, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p0evc"]
+atlas = ExtResource("1_w3esr")
+region = Rect2(216, 0, 36, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vwf03"]
+atlas = ExtResource("1_w3esr")
+region = Rect2(252, 0, 36, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_asu2o"]
+atlas = ExtResource("1_w3esr")
+region = Rect2(288, 0, 36, 30)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v85ib"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_310og")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ef77t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xhn6a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fv1tq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wht2s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i701f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p0evc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vwf03")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_asu2o")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0vivx"]
+size = Vector2(25, 20)
+
+[sub_resource type="Animation" id="Animation_ak12x"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2, 2)]
+}
+
+[sub_resource type="Animation" id="Animation_o41q6"]
+resource_name = "destroy"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.831373), Color(1, 1, 1, 0.666667), Color(1, 1, 1, 0.470588), Color(1, 1, 1, 0.235294), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(2, 2), Vector2(1, 1), Vector2(1e-05, 1e-05)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_nffbw"]
+resource_name = "scale"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(2, 2), Vector2(1.5, 1.5), Vector2(2, 2)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tclh5"]
+_data = {
+"RESET": SubResource("Animation_ak12x"),
+"destroy": SubResource("Animation_o41q6"),
+"scale": SubResource("Animation_nffbw")
+}
+
+[node name="GreenPig" type="Area2D"]
+scale = Vector2(2, 2)
+script = ExtResource("1_4h5v3")
+speed_x = 30.0
+point_value = 15.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_v85ib")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_0vivx")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_tclh5")
+}
+autoplay = "scale"

@@ -1,0 +1,217 @@
+[gd_scene load_steps=22 format=3 uid="uid://bo1p5wfn5yp6w"]
+
+[ext_resource type="Texture2D" uid="uid://btvf0mg8ncv40" path="res://flying_objects/mushroom_3232.png" id="1_kpomw"]
+[ext_resource type="Script" path="res://scenes/red_mushroom/red_mushroom.gd" id="1_kt5tb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sup10"]
+atlas = ExtResource("1_kpomw")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_28xwy"]
+atlas = ExtResource("1_kpomw")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ob0mx"]
+atlas = ExtResource("1_kpomw")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_av672"]
+atlas = ExtResource("1_kpomw")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g656u"]
+atlas = ExtResource("1_kpomw")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_footx"]
+atlas = ExtResource("1_kpomw")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gknsj"]
+atlas = ExtResource("1_kpomw")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b81bf"]
+atlas = ExtResource("1_kpomw")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p42dj"]
+atlas = ExtResource("1_kpomw")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iuupn"]
+atlas = ExtResource("1_kpomw")
+region = Rect2(320, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_stn2c"]
+atlas = ExtResource("1_kpomw")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4dw4l"]
+atlas = ExtResource("1_kpomw")
+region = Rect2(384, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8sso2"]
+atlas = ExtResource("1_kpomw")
+region = Rect2(416, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_af5au"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sup10")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_28xwy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ob0mx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_av672")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g656u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_footx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gknsj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b81bf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p42dj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iuupn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_stn2c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4dw4l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8sso2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_063ex"]
+size = Vector2(16, 17)
+
+[sub_resource type="Animation" id="Animation_d674f"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2, 2)]
+}
+
+[sub_resource type="Animation" id="Animation_rcvpp"]
+resource_name = "destroy"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.831373), Color(1, 1, 1, 0.666667), Color(1, 1, 1, 0.470588), Color(1, 1, 1, 0.235294), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(2, 2), Vector2(1, 1), Vector2(1e-05, 1e-05)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_6s6gl"]
+resource_name = "scale"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(2, 2), Vector2(1.5, 1.5), Vector2(2, 2)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4vjnq"]
+_data = {
+"RESET": SubResource("Animation_d674f"),
+"destroy": SubResource("Animation_rcvpp"),
+"scale": SubResource("Animation_6s6gl")
+}
+
+[node name="RedMushroom" type="Area2D"]
+scale = Vector2(2, 2)
+script = ExtResource("1_kt5tb")
+speed_x = 80.0
+point_value = 10.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_af5au")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4.5)
+shape = SubResource("RectangleShape2D_063ex")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_4vjnq")
+}
+autoplay = "scale"
